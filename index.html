@@ -3,1019 +3,915 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>더베스트 어학원 - 인천 연수구의 영어 마을</title>
+    <title>더베스트 어학원 - 홍보 프레젠테이션</title>
     <style>
-        :root {
-            --primary: #3498db;
-            --secondary: #e74c3c;
-            --accent: #f39c12;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
         }
-        
+
         body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.7;
-            letter-spacing: -0.3px;
+            font-family: 'Nanum Gothic', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000;
+            overflow: hidden;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* 헤더 스타일 */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: var(--accent);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-        
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* 히어로 섹션 */
-        .hero {
-            background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80') center/cover no-repeat;
-            padding: 100px 0;
-            text-align: center;
-            color: white;
+
+        .slides-container {
+            width: 100vw;
+            height: 100vh;
             position: relative;
         }
-        
-        .hero::before {
-            content: '';
+
+        .slide {
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            padding: 60px 80px;
+            background: white;
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            line-height: 1.3;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        
-        .btn:hover {
-            background-color: #e67e22;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* 섹션 공통 스타일 */
-        section {
-            padding: 70px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 34px;
-            color: var(--dark);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-        }
-        
-        .section-title p {
-            font-size: 18px;
-            color: #666;
-            margin-top: 15px;
-        }
-        
-        /* 일정 섹션 */
-        .schedule {
-            background-color: var(--light);
-        }
-        
-        .schedule-info {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-        }
-        
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .schedule-table th, .schedule-table td {
-            padding: 15px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-        
-        .schedule-table th {
-            background-color: var(--primary);
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-        }
-        
-        .schedule-table td {
-            font-size: 15px;
-        }
-        
-        .schedule-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        .schedule-table tr:hover {
-            background-color: #e9f7fe;
-        }
-        
-        .schedule-note {
-            text-align: center;
-            margin-top: 20px;
-            font-style: italic;
-            color: #666;
-            font-size: 15px;
-        }
-        
-        /* 문법 학습 섹션 */
-        .grammar {
-            background-color: white;
-        }
-        
-        .grammar-content {
+
+        .slide.active {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            animation: slideIn 0.5s ease-out;
         }
-        
-        .grammar-intro {
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Cover Slide */
+        .slide-cover {
+            background: linear-gradient(135deg, #1a4b8c 0%, #2d68b2 50%, #3498db 100%);
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.7;
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .grammar-intro h3 {
-            font-size: 24px;
-            color: var(--dark);
+
+        .slide-cover::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50px, -50px); }
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover-title {
+            font-size: 72px;
+            font-weight: 800;
             margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            line-height: 1.2;
         }
-        
-        .grammar-levels {
+
+        .cover-subtitle {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cover-accent {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #f39c12;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 50px;
+            margin-top: 20px;
+            box-shadow: 0 8px 30px rgba(243, 156, 18, 0.4);
+        }
+
+        /* Standard Slide Layouts */
+        .slide-header {
+            margin-bottom: 40px;
+        }
+
+        .slide-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1a4b8c;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .slide-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, #f39c12, #ffc107);
+            border-radius: 3px;
+        }
+
+        .slide-subtitle {
+            font-size: 24px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        
-        .level-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             height: 100%;
         }
-        
-        .level-card:hover {
-            transform: translateY(-10px);
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        
-        .level-card h3 {
-            color: var(--primary);
-            margin-bottom: 18px;
-            font-size: 20px;
-        }
-        
-        .level-card p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .level-card ul {
-            list-style-type: none;
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
             margin-top: 20px;
         }
-        
-        .level-card ul li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Numbered Steps */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 6px solid #3498db;
+        }
+
+        .step-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #3498db;
+            margin-right: 25px;
+            min-width: 80px;
+        }
+
+        .step-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 16px;
+            color: #555;
             line-height: 1.5;
         }
-        
-        .level-card ul li:before {
+
+        /* Bullet Lists */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bullet-list li {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #333;
+            padding-left: 40px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .bullet-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent);
-            font-weight: bold;
+            color: #f39c12;
+            font-weight: 700;
+            font-size: 28px;
         }
-        
-        .grammar-approach {
-            background-color: var(--light);
-            padding: 35px;
-            border-radius: 10px;
-            margin-top: 40px;
-            line-height: 1.7;
-        }
-        
-        .grammar-approach h3 {
-            font-size: 22px;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-        
-        /* EOZ 소개 섹션 */
-        .eoz-intro {
-            background-color: white;
-        }
-        
-        .eoz-content {
+
+        /* Logo Container */
+        .logo-container {
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 40px;
+            gap: 50px;
+            margin: 40px 0;
         }
-        
-        .eoz-text {
-            flex: 1;
+
+        .logo-container img {
+            max-height: 120px;
+            max-width: 300px;
+            object-fit: contain;
         }
-        
-        .eoz-text h3 {
-            font-size: 24px;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-        
-        .eoz-text p {
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-        
-        .eoz-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .eoz-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* 프로그램 섹션 */
-        .programs {
-            background-color: var(--light);
-        }
-        
-        .program-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .program-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .program-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .program-card-content {
-            padding: 20px;
-        }
-        
-        .program-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-        
-        .program-card p {
-            line-height: 1.6;
-        }
-        
-        /* 카카오톡 EOZ 섹션 */
-        .kakao-eoz {
-            background-color: white;
-        }
-        
-        .kakao-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-        }
-        
-        .kakao-content p {
-            margin-bottom: 20px;
-            line-height: 1.7;
-            max-width: 800px;
-        }
-        
-        .kakao-qr {
             margin: 30px 0;
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
         }
-        
-        .kakao-qr h3 {
+
+        .highlight-box h3 {
+            font-size: 32px;
+            font-weight: 700;
             margin-bottom: 15px;
-            color: var(--dark);
         }
-        
-        /* 버스킹 섹션 */
-        .busking {
-            background: linear-gradient(to right, var(--primary), var(--dark));
-            color: white;
-        }
-        
-        .busking h2, .busking .section-title h2 {
-            color: white;
-        }
-        
-        .busking .section-title h2::after {
-            background-color: var(--accent);
-        }
-        
-        .busking .section-title p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .event-schedule {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .event-schedule h3 {
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
-        
-        .event-schedule p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        
-        /* 학부모 참여 섹션 */
-        .parent-participation {
-            background-color: var(--light);
-        }
-        
-        .participation-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .participation-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .participation-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .participation-card i {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .participation-card h3 {
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .participation-card p {
-            line-height: 1.6;
-        }
-        
-        /* 문의 섹션 */
-        .contact {
-            background-color: white;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        
-        .contact-card {
-            text-align: center;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            background-color: var(--light);
-            transition: transform 0.3s;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .contact-card i {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .contact-card h3 {
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .contact-card p {
-            line-height: 1.6;
-        }
-        
-        /* 푸터 */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .footer-content .logo {
-            margin-bottom: 20px;
-        }
-        
-        .footer-content p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .social-links {
-            margin: 20px 0;
-        }
-        
-        .social-links a {
-            color: white;
-            margin: 0 10px;
+
+        .highlight-box p {
             font-size: 20px;
-            transition: color 0.3s;
+            line-height: 1.6;
         }
-        
-        .social-links a:hover {
-            color: var(--accent);
+
+        /* Contact Info */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
         }
-        
-        /* 반응형 디자인 */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .section-title h2 {
-                font-size: 30px;
-            }
+
+        .contact-item {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
         }
-        
-        @media (max-width: 768px) {
-            header {
-                padding: 10px 0;
-            }
-            
-            .logo-container {
-                flex-direction: column;
-            }
-            
-            .logo {
-                margin-bottom: 15px;
-                font-size: 24px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 5px 10px;
-            }
-            
-            .hero {
-                padding: 70px 0;
-            }
-            
-            .hero h1 {
-                font-size: 28px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            section {
-                padding: 50px 0;
-            }
-            
-            .section-title {
-                margin-bottom: 40px;
-            }
-            
-            .section-title h2 {
-                font-size: 26px;
-            }
-            
-            .eoz-content {
-                flex-direction: column;
-            }
-            
-            .eoz-text, .eoz-image {
-                flex: none;
-                width: 100%;
-            }
-            
-            .eoz-image {
-                margin-top: 30px;
-            }
-            
-            .grammar-levels, .program-cards, .participation-cards, .contact-info {
-                grid-template-columns: 1fr;
-            }
-            
-            .schedule-table {
-                font-size: 14px;
-            }
-            
-            .schedule-table th, .schedule-table td {
-                padding: 10px 8px;
-            }
-            
-            .grammar-approach {
-                padding: 25px;
-            }
-            
-            .kakao-qr {
-                padding: 20px;
-            }
+
+        .contact-icon {
+            font-size: 48px;
+            color: #3498db;
+            margin-bottom: 15px;
         }
-        
-        @media (max-width: 480px) {
-            .btn {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-            
-            .section-title h2 {
-                font-size: 24px;
-            }
-            
-            .section-title p {
-                font-size: 16px;
-            }
-            
-            .level-card, .participation-card, .contact-card {
-                padding: 20px;
-            }
-            
-            .event-schedule {
-                padding: 20px;
-            }
+
+        .contact-label {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .contact-value {
+            font-size: 20px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #2980b9;
+            transform: scale(1.1);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            z-index: 1000;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #f39c12;
+            z-index: 1001;
+            transition: width 0.3s;
+        }
+
+        /* Image Styling */
+        .slide-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Responsive Text */
+        @media (max-width: 1400px) {
+            .cover-title { font-size: 56px; }
+            .slide-title { font-size: 40px; }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- 헤더 -->
-    <header>
-        <div class="container">
-            <div class="logo-container">
-                <div class="logo">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>THE BEST</span> 어학원
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide-counter" id="slideCounter">1 / 12</div>
+
+    <div class="slides-container">
+        <!-- Slide 1: Cover -->
+        <div class="slide active slide-cover">
+            <div class="cover-content">
+                <div class="cover-title">
+                    더베스트 어학원<br>
+                    <span style="color: #f39c12;">THE BEST</span> Language Academy
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="#schedule">2학기 일정</a></li>
-                        <li><a href="#grammar">문법 학습</a></li>
-                        <li><a href="#eoz">EOZ 소개</a></li>
-                        <li><a href="#programs">프로그램</a></li>
-                        <li><a href="#kakao">카카오톡 EOZ</a></li>
-                        <li><a href="#busking">버스킹</a></li>
-                        <li><a href="#parents">학부모 참여</a></li>
-                        <li><a href="#contact">문의하기</a></li>
+                <div class="cover-subtitle">
+                    인천 연수구의 영어 마을
+                </div>
+                <div class="cover-subtitle" style="font-size: 28px; margin-top: 20px;">
+                    English Discoveries와 함께하는<br>
+                    글로벌 영어 교육의 새로운 기준
+                </div>
+                <div class="cover-accent">
+                    🌟 DISCOVER YOUR ENGLISH POTENTIAL 🌟
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Who We Are -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">WHO WE ARE</h1>
+                <p class="slide-subtitle">더베스트 어학원을 소개합니다</p>
+            </div>
+            <div class="slide-content">
+                <div class="two-columns">
+                    <div class="column">
+                        <h2 style="font-size: 36px; color: #2c3e50; margin-bottom: 30px;">
+                            인천 송도/연수구의<br>
+                            <span style="color: #f39c12;">프리미엄 영어 교육 기관</span>
+                        </h2>
+                        <ul class="bullet-list">
+                            <li><strong>English Only Zone (EOZ)</strong> 운영</li>
+                            <li>등원부터 하원까지 <strong>100% 영어 환경</strong></li>
+                            <li>학생, 강사, 학부모 모두 영어로 소통</li>
+                            <li>카카오톡 기반 온라인 EOZ</li>
+                            <li><strong>24/7 영어 몰입 시스템</strong></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h3>🎯 우리의 미션</h3>
+                            <p>실제 영미권과 같은 환경에서<br>영어를 '공부'가 아닌<br>'의사소통 도구'로 자연스럽게<br>받아들이도록 합니다</p>
+                        </div>
+                        <div style="text-align: center; margin-top: 30px; font-size: 24px; color: #555;">
+                            <strong>"작은 영어 마을"</strong>에서<br>
+                            큰 꿈을 키워보세요! 🌈
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Key Features -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">주요 특징 및 강점</h1>
+                <p class="slide-subtitle">더베스트만의 차별화된 교육 시스템</p>
+            </div>
+            <div class="slide-content">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <div class="feature-title">English Only Zone</div>
+                        <div class="feature-text">실제 영미권과 같은 완전한 영어 몰입 환경 제공</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <div class="feature-title">체계적 레벨별 학습</div>
+                        <div class="feature-text">Starter → Planner → Walker → 고급 단계별 맞춤 교육</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <div class="feature-title">통합 학습 접근</div>
+                        <div class="feature-text">Reading, Speaking, Writing, Grammar 4대 영역 연계 학습</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👨‍👩‍👧</div>
+                        <div class="feature-title">학부모 참여 프로그램</div>
+                        <div class="feature-text">English Guardians, 워크숍, 가족 체험 Day 운영</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎭</div>
+                        <div class="feature-title">특별 프로그램</div>
+                        <div class="feature-text">스트리트 버스킹, Halloween Party, Carol Contest</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title">정기 평가 시스템</div>
+                        <div class="feature-text">중간고사, 기말고사로 학습 성취도 정기 확인</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Why THE BEST? -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">왜 더베스트 어학원인가?</h1>
+                <p class="slide-subtitle">3가지 핵심 이유</p>
+            </div>
+            <div class="slide-content">
+                <div class="steps-container">
+                    <div class="step-item" style="border-left-color: #e74c3c;">
+                        <div class="step-number" style="color: #e74c3c;">1</div>
+                        <div class="step-content">
+                            <h3>🤖 AI 시대 기본 교육</h3>
+                            <p>4차 산업혁명 시대, 영어는 필수 소양입니다. 글로벌 커뮤니케이션 능력 배양을 통해 미래 경쟁력의 핵심 역량을 키웁니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-item" style="border-left-color: #3498db;">
+                        <div class="step-number" style="color: #3498db;">2</div>
+                        <div class="step-content">
+                            <h3>🌏 글로벌 표준 영어 교육</h3>
+                            <p>국제 표준에 맞춘 커리큘럼과 실생활 영어 중심의 실용적 학습. 영미권 환경과 동일한 학습 경험을 제공합니다.</p>
+                        </div>
+                    </div>
+                    <div class="step-item" style="border-left-color: #f39c12;">
+                        <div class="step-number" style="color: #f39c12;">3</div>
+                        <div class="step-content">
+                            <h3>📈 내신 성적 향상</h3>
+                            <p>학교 내신 완벽 대비, 중등부 서술형 완벽 대응. 문법, 독해, 작문 통합 학습으로 성적 향상을 보장합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: English Discoveries Introduction -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">English Discoveries</h1>
+                <p class="slide-subtitle">THE GAME CHANGER</p>
+            </div>
+            <div class="slide-content">
+                <div class="logo-container">
+                    <img src="https://edusoftlearning.com/wp-content/uploads/2024/03/ed_Exellence_Final3.png" alt="English Discoveries">
+                    <img src="https://edusoftlearning.com/wp-content/uploads/2024/11/ETS-EduSoft-logo.svg" alt="ETS Edusoft">
+                </div>
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px; border-radius: 20px; margin-top: 30px;">
+                    <h2 style="font-size: 36px; margin-bottom: 25px; text-align: center;">English Discoveries란?</h2>
+                    <ul class="bullet-list" style="color: white;">
+                        <li style="color: white;">ETS (Educational Testing Service) 산하 Edusoft 개발</li>
+                        <li style="color: white;">전 세계 수백만 학생들이 사용하는 검증된 프로그램</li>
+                        <li style="color: white;">AI 기반 맞춤형 학습 시스템</li>
+                        <li style="color: white;">게임처럼 재미있는 인터랙티브 학습</li>
                     </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- 히어로 섹션 -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>인천 연수구의 작은 영어 마을</h1>
-            <p>더베스트 어학원에서 만나는 특별한 영어 몰입 경험</p>
-            <a href="#contact" class="btn">무료 체험 신청하기</a>
-        </div>
-    </section>
-
-    <!-- 2학기 일정 섹션 -->
-    <section id="schedule" class="schedule">
-        <div class="container">
-            <div class="section-title">
-                <h2>2학기 일정</h2>
-                <p>2025년 9월부터 2026년 2월까지의 학사 일정</p>
-            </div>
-            <div class="schedule-info">
-                <p>더베스트어학원 2학기는 9월부터 내년 2월까지입니다.<br>
-                주요 일정은 다음과 같으며, 세부사항은 상담을 통해 자세하게 안내 예정입니다.</p>
-            </div>
-            
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th>기간</th>
-                        <th>일정</th>
-                        <th>비고</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>9월~10월</td>
-                        <td>학교 내신대비</td>
-                        <td>중등부</td>
-                    </tr>
-                    <tr>
-                        <td>10월</td>
-                        <td>Halloween Party</td>
-                        <td>31일 / 초등부</td>
-                    </tr>
-                    <tr>
-                        <td>11월</td>
-                        <td>더베스트 중간고사</td>
-                        <td>초등부 / 중등부 전체</td>
-                    </tr>
-                    <tr>
-                        <td>11~12월</td>
-                        <td>학교 내신대비</td>
-                        <td>중등부</td>
-                    </tr>
-                    <tr>
-                        <td>12월</td>
-                        <td>Carol Contest / 학원 방학</td>
-                        <td>마지막주</td>
-                    </tr>
-                    <tr>
-                        <td>1월</td>
-                        <td>겨울방학특강</td>
-                        <td>안내문 발송 예정</td>
-                    </tr>
-                    <tr>
-                        <td>1월~2월</td>
-                        <td>설명회</td>
-                        <td>추후 일정 안내 예정</td>
-                    </tr>
-                    <tr>
-                        <td>2월</td>
-                        <td>더베스트 기말고사</td>
-                        <td>초등부 / 중등부 전체</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="schedule-note">
-                <p>※ 세부 일정은 학사일정에 따라 변경될 수 있습니다. 정확한 일정은 학원 내부 공지 및 상담을 통해 확인해 주세요.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 문법 학습 섹션 -->
-    <section id="grammar" class="grammar">
-        <div class="container">
-            <div class="section-title">
-                <h2>더베스트 어학원의 문법 학습</h2>
-                <p>체계적이고 효과적인 영어 문법 교육</p>
-            </div>
-            <div class="grammar-content">
-                <div class="grammar-intro">
-                    <h3>자연스럽게 이해하는 문법 교육</h3>
-                    <p>영어를 공부하는 학생이라면 누구나 어렵게 생각하는 문법이라는 영역은 'Reading' 영역에 대한 충분한 이해와 연습 이후에 진행해야 합니다.</p>
-                    <p>더베스트어학원은 'Starter'와 'Planner' 레벨을 거쳐 'Reading' 영역에 대한 재미와 긴 문장 읽기에 적응한 친구들이 문법을 시작하게 됩니다.</p>
                 </div>
-                
-                <div class="grammar-levels">
-                    <div class="level-card">
-                        <h3>기초 리딩 단계</h3>
-                        <p>기초 리딩 수업에서 문법 용어를 공부하진 않지만 동사 개념을 꾸준히 받아들이게 해서 나중에 문법을 시작하게 되었을 때 자연스럽게 깨닫게 됩니다.</p>
-                        <ul>
-                            <li>문법 용어 없이 자연스러운 이해</li>
-                            <li>동사 개념의 체계적 습득</li>
-                            <li>Reading 기반 문법 이해도 향상</li>
+            </div>
+        </div>
+
+        <!-- Slide 6: English Discoveries Features -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">English Discoveries 핵심 기능</h1>
+                <p class="slide-subtitle">세계 최고 수준의 영어 학습 플랫폼</p>
+            </div>
+            <div class="slide-content">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-title">개인 맞춤형 학습</div>
+                        <div class="feature-text">학생별 수준과 속도에 맞춘 최적화된 학습 경로 제공</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-title">실시간 피드백</div>
+                        <div class="feature-text">즉각적인 평가와 교정으로 효과적인 학습</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <div class="feature-title">게임형 콘텐츠</div>
+                        <div class="feature-text">재미있는 인터랙티브 활동으로 몰입도 향상</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎧</div>
+                        <div class="feature-title">4대 영역 통합</div>
+                        <div class="feature-text">Listening, Speaking, Reading, Writing 균형 발달</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title">진도 추적</div>
+                        <div class="feature-text">상세한 학습 데이터와 성취도 분석 리포트</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏆</div>
+                        <div class="feature-title">성취 시스템</div>
+                        <div class="feature-text">배지와 보상으로 학습 동기 부여</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: How English Discoveries Helps -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">English Discoveries 솔루션</h1>
+                <p class="slide-subtitle">HOW IT HELPS</p>
+            </div>
+            <div class="slide-content">
+                <div class="steps-container">
+                    <div class="step-item" style="border-left-color: #9b59b6;">
+                        <div class="step-number" style="color: #9b59b6;">AI</div>
+                        <div class="step-content">
+                            <h3>AI 기본 교육 실현</h3>
+                            <p>✓ 스마트 학습 시스템으로 개인별 최적화된 학습<br>
+                            ✓ 데이터 기반 학습 분석 및 정밀한 피드백<br>
+                            ✓ 자동화된 진도 관리와 성취도 측정</p>
+                        </div>
+                    </div>
+                    <div class="step-item" style="border-left-color: #27ae60;">
+                        <div class="step-number" style="color: #27ae60;">🌍</div>
+                        <div class="step-content">
+                            <h3>글로벌 표준 교육</h3>
+                            <p>✓ ETS의 TOEFL, TOEIC 개발 노하우 적용<br>
+                            ✓ 국제 인증 커리큘럼과 표준화된 평가<br>
+                            ✓ 실제 영어권 상황 기반 실용적 콘텐츠</p>
+                        </div>
+                    </div>
+                    <div class="step-item" style="border-left-color: #e67e22;">
+                        <div class="step-number" style="color: #e67e22;">📚</div>
+                        <div class="step-content">
+                            <h3>내신 성적 향상</h3>
+                            <p>✓ 체계적인 문법 학습 모듈<br>
+                            ✓ 독해력 향상 집중 트레이닝<br>
+                            ✓ 서술형 대비 Writing 강화 프로그램<br>
+                            ✓ 학교 시험 유형 완벽 대응</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: How to Join -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">프로그램 참여 방식</h1>
+                <p class="slide-subtitle">HOW TO JOIN</p>
+            </div>
+            <div class="slide-content">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3 style="font-size: 28px; color: #2c3e50; margin-bottom: 20px;">📌 대상</h3>
+                        <ul class="bullet-list">
+                            <li><strong>초등학생:</strong> Starter, Planner 레벨</li>
+                            <li><strong>중학생:</strong> Walker 이상 레벨</li>
+                            <li>레벨 테스트 후 반 배정</li>
+                        </ul>
+                        <h3 style="font-size: 28px; color: #2c3e50; margin: 40px 0 20px;">📚 학습 방식</h3>
+                        <ul class="bullet-list">
+                            <li>주 3-5회 학원 수업</li>
+                            <li>English Discoveries 온라인 학습 병행</li>
+                            <li>카카오톡 EOZ 실시간 영어 대화</li>
+                            <li>정기 평가 및 개별 피드백</li>
                         </ul>
                     </div>
-                    
-                    <div class="level-card">
-                        <h3>Walker 레벨: 기초 문법 시작</h3>
-                        <p>주로 be동사와 일반동사, 명사, 대명사와 같은 기초부터 학습합니다.</p>
-                        <ul>
-                            <li>be동사와 일반동사</li>
-                            <li>명사와 대명사</li>
-                            <li>기초 문법 개념 완벽 이해</li>
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h3>💰 학비 및 상담</h3>
+                            <p style="margin-bottom: 15px;">✓ 레벨별 차등 학비</p>
+                            <p style="margin-bottom: 15px;">✓ 무료 체험 수업 제공</p>
+                            <p>✓ 개별 상담을 통한<br>맞춤 플랜 제공</p>
+                        </div>
+                        <div style="background: #fff3cd; padding: 30px; border-radius: 15px; margin-top: 30px; border: 3px solid #ffc107;">
+                            <h3 style="color: #856404; font-size: 24px; margin-bottom: 15px;">🎁 특별 혜택</h3>
+                            <p style="color: #856404; font-size: 18px;">무료 레벨 테스트 +<br>1회 무료 체험 수업!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Expected Outcomes -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">기대 효과</h1>
+                <p class="slide-subtitle">EXPECTED OUTCOMES</p>
+            </div>
+            <div class="slide-content">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <div class="feature-title">영어 의사소통 능력 향상</div>
+                        <div class="feature-text">
+                            ✓ 듣기, 말하기, 읽기, 쓰기 균형 발달<br>
+                            ✓ 실생활 영어 자신감 증대
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-title">학업 성취도 향상</div>
+                        <div class="feature-text">
+                            ✓ 학교 내신 성적 상승<br>
+                            ✓ 영어 시험 점수 개선<br>
+                            ✓ 서술형 문제 대응력 강화
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌏</div>
+                        <div class="feature-title">글로벌 역량 강화</div>
+                        <div class="feature-text">
+                            ✓ 국제 표준 영어 능력 습득<br>
+                            ✓ 문화적 이해도 증진<br>
+                            ✓ 미래 진로 경쟁력 확보
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-title">자기주도 학습 능력</div>
+                        <div class="feature-text">
+                            ✓ AI 플랫폼 기반 스스로 학습<br>
+                            ✓ 목표 설정 및 성취 경험<br>
+                            ✓ 평생 학습자로 성장
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Activities & Events -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">학생 활동 & 이벤트</h1>
+                <p class="slide-subtitle">다양한 프로그램으로 영어를 즐겁게!</p>
+            </div>
+            <div class="slide-content">
+                <div class="two-columns">
+                    <div class="column">
+                        <h3 style="font-size: 28px; color: #2c3e50; margin-bottom: 20px;">🎉 정기 이벤트</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Halloween Party</strong> (10월)</li>
+                            <li><strong>Carol Contest</strong> (12월)</li>
+                            <li><strong>중간고사 & 기말고사</strong></li>
+                            <li><strong>겨울방학 특강</strong></li>
+                        </ul>
+                        <h3 style="font-size: 28px; color: #2c3e50; margin: 40px 0 20px;">🎭 특별 프로그램</h3>
+                        <ul class="bullet-list">
+                            <li><strong>스트리트 버스킹:</strong> 영어 연극, 뮤지컬, 노래 공연</li>
+                            <li><strong>English Guardians:</strong> 학부모 자원봉사</li>
+                            <li><strong>가족 영어 체험 Day</strong></li>
                         </ul>
                     </div>
-                    
-                    <div class="level-card">
-                        <h3>통합 학습: Speaking & Writing</h3>
-                        <p>'Speaking' 수업시간에 함께 진행되는 'Pattern Writing'을 통해 동사의 수일치 개념이나 시제 개념과 같이 중등 서술형에서도 틀리기 쉬운 영역을 자연스럽게 시작합니다.</p>
-                        <ul>
-                            <li>Pattern Writing을 통한 실습</li>
-                            <li>Speaking과 Writing 연계 학습</li>
-                            <li>실제 활용 중심의 문법 교육</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="grammar-approach">
-                    <h3>더베스트 어학원의 문법 교육 접근법</h3>
-                    <p>영어는 언어이기 때문에 한순간에 외워서 정답을 맞추는 것 보다는 꾸준한 노력과 시간이 걸리는 과목입니다. 기초문법을 튼튼하게 시작하면 'Speaking' 영역뿐만 아니라 'Writing' 영역에서도 더 큰 자신감을 갖게 됩니다.</p>
-                    <p>무턱대고 외우고 강제로 주입받는 게 아닌, 조금 느리더라도 충분히 이해하고 받아들일 수 있는 문법. 이것이 더베스트어학원이 목표로 하고 있는 방식입니다.</p>
-                    
-                    <p>'Walker' 레벨에서 시작한 문법은 매 학기를 거쳐 문법 개념에 대한 설명과 많은 문제 풀이, 문장에서 활용하기에서 수많은 반복 학습을 하게 됩니다. 여러 번 반복해서 몸에 익힌 방법은 시간이 지나도, 영역별 난이도가 높아져도 튼튼한 기본기를 갖게 됩니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EOZ 소개 섹션 -->
-    <section id="eoz" class="eoz-intro">
-        <div class="container">
-            <div class="section-title">
-                <h2>English Only Zone이란?</h2>
-                <p>더베스트 어학원만의 특별한 영어 몰입 환경</p>
-            </div>
-            <div class="eoz-content">
-                <div class="eoz-text">
-                    <h3>등원부터 하원까지 100% 영어 환경!</h3>
-                    <p>더베스트 어학원은 인천 연수구에 위치한 특별한 영어 마을입니다. English Only Zone(EOZ)에서는 학생, 강사, 그리고 학부모님까지 모두 영어만 사용하는 독특한 환경을 제공합니다.</p>
-                    <p>아이들이 영어를 '공부'가 아닌 '의사소통 도구'로 자연스럽게 받아들이도록 설계된 이 프로그램은 영어에 대한 자신감과 흥미를 동시에 키워줍니다.</p>
-                    <p>점진적으로 확대되는 EOZ 시간대를 통해 아이들은 안전하고 재미있는 환경에서 실제로 사용되는 생생한 영어를 경험하게 됩니다.</p>
-                    <a href="#programs" class="btn">프로그램 알아보기</a>
-                </div>
-                <div class="eoz-image">
-                    <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?auto=format&fit=crop&q=80" alt="English Only Zone 수업 장면">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 프로그램 섹션 -->
-    <section id="programs" class="programs">
-        <div class="container">
-            <div class="section-title">
-                <h2>우리의 특별한 프로그램</h2>
-                <p>더베스트 어학원만의 다양한 영어 몰입 프로그램</p>
-            </div>
-            <div class="program-cards">
-                <div class="program-card">
-                    <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80" alt="English Immersion Zone">
-                    <div class="program-card-content">
-                        <h3>English Immersion Zone</h3>
-                        <p>특정 시간대와 공간을 완전한 영어 사용 구역으로 지정하여 자연스러운 영어 몰입 환경을 제공합니다.</p>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&q=80" alt="카카오톡 EOZ">
-                    <div class="program-card-content">
-                        <h3>카카오톡 EOZ</h3>
-                        <p>온라인에서도 영어 사용을 지속하는 디지털 English Only Zone. 언제 어디서나 영어 환경에 노출됩니다.</p>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&q=80" alt="스트리트 버스킹">
-                    <div class="program-card-content">
-                        <h3>스트리트 버스킹</h3>
-                        <p>학원 앞 공간에서 진행하는 영어 연극, 뮤지컬, 노래 공연을 통해 영어 표현력과 자신감을 키웁니다.</p>
+                    <div class="column">
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 40px; border-radius: 20px;">
+                            <h3 style="font-size: 32px; margin-bottom: 20px;">📅 1학기 주요 일정</h3>
+                            <p style="font-size: 18px; line-height: 2;">
+                                <strong>3~4월:</strong> 학교 내신대비<br>
+                                <strong>4월 30일:</strong> Busking & Party<br>
+                                <strong>5월:</strong> 중간고사<br>
+                                <strong>6월:</strong> Carol Contest<br>
+                                <strong>7월:</strong> 여름방학 특강<br>
+                                <strong>7~8월:</strong> 설명회<br>
+                                <strong>8월:</strong> 기말고사
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- 카카오톡 EOZ 섹션 -->
-    <section id="kakao" class="kakao-eoz">
-        <div class="container">
-            <div class="section-title">
-                <h2>카카오톡 English Only Zone</h2>
-                <p>온라인에서도 계속되는 영어 몰입 환경</p>
+        <!-- Slide 11: Next Steps -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">향후 진행 절차</h1>
+                <p class="slide-subtitle">NEXT STEPS</p>
             </div>
-            <div class="kakao-content">
-                <p>더베스트 어학원은 오프라인뿐만 아니라 온라인에서도 영어 사용 환경을 제공합니다.<br>
-                카카오톡 EOZ에서는 학생들끼리, 학생과 강사님 사이의 모든 대화가 영어로 이루어집니다.</p>
-                <div class="kakao-qr">
-                    <h3>카카오톡 EOZ에 참여하세요!</h3>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://thebesteoz.chat" alt="카카오톡 EOZ QR 코드" width="150" height="150">
-                </div>
-                <p>카카오톡 EOZ에서는 영어로만 대화하는 안전한 환경에서<br>
-                실시간으로 영어 실력을 키우고 친구들과 소통할 수 있습니다.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 버스킹 섹션 -->
-    <section id="busking" class="busking">
-        <div class="container">
-            <div class="section-title">
-                <h2>스트리트 버스킹 공연</h2>
-                <p>학원 앞 공간에서 펼쳐지는 특별한 영어 공연</p>
-            </div>
-            <div class="kakao-content">
-                <p>더베스트 어학원은 정기적으로 학원 앞 공간에서 영어 버스킹 공연을 진행합니다.<br>
-                학생들은 영어 연극, 뮤지컬, 노래, 댄스 등을 통해 영어 실력을 뽐내고 자신감을 키웁니다.</p>
-                
-                <div class="event-schedule">
-                    <h3>다가오는 공연 일정</h3>
-                    <p>다음 버스킹 공연: 2025년 12월 15일 (금) 오후 5시</p>
-                    <p>공연 주제: "Christmas Around the World"</p>
-                    <p>위치: 더베스트 어학원 앞 광장</p>
-                    <a href="#contact" class="btn">공연 참여 신청하기</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 학부모 참여 섹션 -->
-    <section id="parents" class="parent-participation">
-        <div class="container">
-            <div class="section-title">
-                <h2>학부모 참여 프로그램</h2>
-                <p>함께 만들어가는 영어 교육 공동체</p>
-            </div>
-            <div class="participation-cards">
-                <div class="participation-card">
-                    <i class="fas fa-hands-helping"></i>
-                    <h3>English Guardians</h3>
-                    <p>영어에 능숙한 학부모님들이 카카오톡 EOZ에서 Volunteer로 참여하여 아이들을 도와줍니다.</p>
-                </div>
-                <div class="participation-card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>부모 교육 워크숍</h3>
-                    <p>자녀의 영어 교육을 효과적으로 지원하는 방법을 배우는 특별 워크숍에 참여하세요.</p>
-                </div>
-                <div class="participation-card">
-                    <i class="fas fa-users"></i>
-                    <h3>가족 영어 체험 Day</h3>
-                    <p>가족 모두가 참여하는 재미있는 영어 활동을 통해 가족 간의 유대감을 강화합니다.</p>
+            <div class="slide-content">
+                <div class="steps-container">
+                    <div class="step-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none;">
+                        <div class="step-number" style="color: white;">1</div>
+                        <div class="step-content">
+                            <h3 style="color: white;">📢 설명회 참석</h3>
+                            <p style="color: white;"><strong>일정:</strong> 2026년 1월~2월 (추후 공지)<br>
+                            <strong>내용:</strong> English Discoveries 시연, 커리큘럼 소개, Q&A</p>
+                        </div>
+                    </div>
+                    <div class="step-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none;">
+                        <div class="step-number" style="color: white;">2</div>
+                        <div class="step-content">
+                            <h3 style="color: white;">✅ 무료 체험 및 레벨 테스트</h3>
+                            <p style="color: white;">1:1 레벨 테스트 진행 → 무료 체험 수업 제공 → 개인별 학습 계획 수립</p>
+                        </div>
+                    </div>
+                    <div class="step-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; border: none;">
+                        <div class="step-number" style="color: white;">3</div>
+                        <div class="step-content">
+                            <h3 style="color: white;">🎓 등록 및 학습 시작</h3>
+                            <p style="color: white;">반 배정 및 학습 자료 제공 → English Discoveries 계정 생성 → 오리엔테이션 참석</p>
+                        </div>
+                    </div>
+                    <div class="step-item" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; border: none;">
+                        <div class="step-number" style="color: #3498db;">4</div>
+                        <div class="step-content">
+                            <h3>📧 상세 자료 발송</h3>
+                            <p>학사 일정표 • 레벨별 커리큘럼 안내 • 학부모 가이드북</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- 문의 섹션 -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>문의하기</h2>
-                <p>더베스트 어학원에 궁금한 점이 있으신가요?</p>
+        <!-- Slide 12: Contact -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1 class="slide-title">연락처 & 위치</h1>
+                <p class="slide-subtitle">CONTACT US</p>
             </div>
-            <div class="contact-info">
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>위치</h3>
-                    <p>인천 연수구 컨벤시아대로 230번길 42<br>아라프라자 2층 207-1</p>
+            <div class="slide-content">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-label">주소</div>
+                        <div class="contact-value">인천 연수구 컨벤시아대로230번길 42<br>아라프라자 2층 207-1</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">☎️</div>
+                        <div class="contact-label">전화</div>
+                        <div class="contact-value" style="font-size: 32px; font-weight: 700; color: #3498db;">032-252-9600</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-label">이메일</div>
+                        <div class="contact-value">gcha3514@naver.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-label">상담 시간</div>
+                        <div class="contact-value">평일 오전 10시 ~ 오후 8시<br>주말 및 공휴일 휴무</div>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>전화</h3>
-                    <p>032-252-9600</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>이메일</h3>
-                    <p>gcha3514@naver.com</p>
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <h3 style="font-size: 42px; margin-bottom: 15px;">🌟 지금 바로 무료 상담 신청하세요! 🌟</h3>
+                    <p style="font-size: 24px;">더베스트 어학원과 함께<br>영어의 즐거움을 발견하세요!</p>
                 </div>
             </div>
         </div>
+
+        <!-- Slide 13: Ending -->
+        <div class="slide slide-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="cover-content">
+                <div class="cover-title" style="font-size: 64px;">
+                    더베스트 어학원과 함께
+                </div>
+                <div class="cover-subtitle" style="font-size: 36px; margin-top: 30px;">
+                    영어의 즐거움을 발견하세요!
+                </div>
+                <div class="cover-subtitle" style="font-size: 32px; margin-top: 30px; color: #f39c12;">
+                    English Discoveries로 시작하는<br>
+                    글로벌 미래
+                </div>
+                <div class="cover-accent" style="margin-top: 50px; font-size: 32px;">
+                    📞 032-252-9600
+                </div>
+                <div style="margin-top: 30px; font-size: 24px; opacity: 0.9;">
+                    지금 바로 무료 상담 신청하세요!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="previousSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            updateCounter();
+            updateProgressBar();
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function updateCounter() {
+            document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+
+        // Initialize
+        updateCounter();
+        updateProgressBar();
+    </script>
+</body>
+</html>
     
